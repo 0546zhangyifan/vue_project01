@@ -1,12 +1,5 @@
 <template>
-  <div id="app">
-    <h1>111</h1>
-  </div>
+  <router-view />
 </template>
 <style lang='scss' scoped>
-#app {
-  h1 {
-    height: 200px;
-  }
-}
 </style>
