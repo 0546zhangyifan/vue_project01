@@ -11,60 +11,25 @@
         <div class="swiper-pagination"></div>
       </div>
       <!-- 以下是轮播图下面的信息 -->
-      <div class="home-module">
+      <div class="home-module" v-for="(item1, index1) in mainList" :key="index1">
         <p class="home-module-title">
             <span class="home-module-title-icon"></span>
-            <span>布卡娘推荐</span>
+            <span>{{ item1.title }}</span>
         </p>
-        <div class="manga-item manga-list-item-big">
+        <div v-for="(item2, index2) in mainList[index1].items" :key="index2" class="manga-item" :class="{ 'manga-list-item-big':item2.type==1, 'manga-list-item-lr':item2.type==2, 'manga-list-item-l':(item2.type==2&&index2%2===1), 'manga-list-item-r':(item2.type==2&&index2%2===0) }" >
             <div class="manga-item-pic">
-                <img height="180.00px" alt="英雄？我早就不当了" src="http://c-r7.ibuka.cn/auto/appRecom/202001091736_5e16f41070ff5.jpg" lazy="loaded">
+                <img :alt="item2.title" :src="item2.pic_url" lazy="loaded">
             </div>
-            <p class="manga-list-item-name">英雄？我早就不当了</p>
-            <p class="manga-list-item-small">一个脱离了中二病的传说级英雄</p>
+            <p class="manga-list-item-name">{{ item2.title }}</p>
+            <p class="manga-list-item-small">{{ item2.subtitle }}</p>
         </div>
-        <!--  -->
+      </div>
+      <div class="home-module">
         <div class="manga-item manga-list-item-lr manga-list-item-l">
-            <div class="manga-item-pic">
-                <img height="117.49px" alt="阿多尼斯" src="http://c-r7.ibuka.cn/auto/appRecom/202004171622_5e99674a1cca6.jpg" lazy="loaded">
-            </div>
-            <p class="manga-list-item-name">阿多尼斯</p>
-            <p class="manga-list-item-small">让世界屈服于她的脚下</p>
-        </div>
-        <div class="manga-item manga-list-item-lr manga-list-item-r">
-            <div class="manga-item-pic">
-                <img height="117.49px" alt="蛇蝎不好惹：弃后也妖娆" src="http://c-r7.ibuka.cn/auto/appRecom/20181030141438_5bd7f6ce193c9.jpg" lazy="loaded">
-            </div>
-            <p class="manga-list-item-name">蛇蝎不好惹：弃后也妖娆</p>
-            <p class="manga-list-item-small">化身蛇蝎，也要向害我的人复仇</p>
-        </div>
-        <div class="manga-item manga-list-item-lr manga-list-item-l">
-            <div class="manga-item-pic">
-                <img height="117.49px" alt="无限使徒与十二战姬" src="http://c-r7.ibuka.cn/auto/appRecom/202004171719_5e99748846840.jpg" lazy="loaded">
-            </div>
-            <p class="manga-list-item-name">无限使徒与十二战姬</p>
-            <p class="manga-list-item-small">最强使徒（单身狗）讨老婆之路</p>
-        </div>
-        <div class="manga-item manga-list-item-lr manga-list-item-r">
-            <div class="manga-item-pic">
-                <img height="117.49px" alt="兼职神仙" src="http://i-cdn.ibuka.cn/auto/appRecom/20190114142552_5c3c2b6fddf66.jpg" lazy="loaded">
-            </div>
-            <p class="manga-list-item-name">兼职神仙</p>
-            <p class="manga-list-item-small">我是天才、帅又多金，还是神</p>
-        </div>
-        <div class="manga-item manga-list-item-lr manga-list-item-l">
-            <div class="manga-item-pic">
-                <img height="117.49px" alt="据说我是王的女儿？" src="http://i-cdn.ibuka.cn/auto/appRecom/20190730152518_5d3ff0dea1d9a.jpg" lazy="loaded">
-            </div>
-            <p class="manga-list-item-name">据说我是王的女儿？</p>
-            <p class="manga-list-item-small">重生成婴儿给暴君当女儿</p>
-        </div>
-        <div class="manga-item manga-list-item-lr manga-list-item-r">
-            <div class="manga-item-pic">
-                <img height="116.36px" alt="大理寺日志" src="http://i-cdn.ibuka.cn/auto/appRecom/20160927160211_57ea2782d6a50.jpg" lazy="loaded">
-            </div>
-            <p class="manga-list-item-name">大理寺日志</p>
-            <p class="manga-list-item-small">白猫警长，升堂~~</p>
+          <div class="manga-item-pic">
+            <img height="117.49px" alt="更多总裁>>" src="http://i-cdn.ibuka.cn/auto/appRecom/201909241348_5d89ae16daf67.jpg" lazy="loaded">
+          </div>
+            <p class="manga-list-item-name">更多总裁&gt;&gt;</p>
         </div>
       </div>
       <footer>
@@ -89,7 +54,8 @@ export default {
   data () {
     return {
       bannerList: [],
-      mainList: []
+      mainList: [],
+      listItem: 0
     }
   },
   // mounted () {
@@ -101,6 +67,7 @@ export default {
   //       clickable :true,
   //     },
   //     loop : true,
+  //     autoplay:true,
   //   })
   //   }, 200);
   //   /* eslint-disable */
@@ -120,6 +87,11 @@ export default {
             clickable :true,
           },
           loop : true,
+          autoplay: {
+            delay: 5000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+          }
         })
         /* eslint-disable */
         console.log(this.mainList[0].title)
@@ -140,7 +112,7 @@ export default {
     height: 100%;
     width: 100%;
     flex: 1;
-    margin-top: 89px;
+    margin-top: 84px;
     padding: 7.5px;
     flex-direction: column;
     overflow: auto;
@@ -197,6 +169,8 @@ export default {
           color: #333;
           margin: 5px 0;
           max-height: 38px;
+          height: 19px;
+          line-height: 19px;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 1;
@@ -206,6 +180,13 @@ export default {
         .manga-list-item-small{
           font-size: 12px;
           color: #999;
+          width: 100%;
+          height: 16px;
+          line-height: 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-break: keep-all;
+          white-space: nowrap;
         }
       }
       .manga-list-item-big{
