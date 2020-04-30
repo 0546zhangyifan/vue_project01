@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../views/Home'
-import Top from '../views/Top'
-import Category from '../views/Category'
-import Search from '../views/Search'
+const Home = () => import(/* webpackChunkName: "home" */'../views/Home')
+const Top = () => import(/* webpackChunkName: "top" */'../views/Top')
+const Category = () => import(/* webpackChunkName: "category" */'../views/Category')
+const Search = () => import(/* webpackChunkName: "search" */'../views/Search')
 
 Vue.use(VueRouter)
 

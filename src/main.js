@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import gotop from './directive/gotop.js'
 
 import VueLazyload from 'vue-lazyload'
 
@@ -21,5 +22,6 @@ Vue.use(VueLazyload, {
 new Vue({
   router,
   store,
+  gotop,
   render: h => h(App)
 }).$mount('#app')

@@ -14,7 +14,7 @@
               </li>
           </ul>
       </nav>
-      <div id="footer-arrow" class="fa buka-toup" v-if="current===0"></div>
+      <!-- <div id="footer-arrow" class="fa buka-toup iconfont" v-if="current===0" @click="gotop">&#xe61d;</div> -->
   </header>
 </template>
 <script>
@@ -38,6 +38,9 @@ export default {
   methods: {
     btnList (index) {
       this.current = index
+    },
+    gotop () {
+      this.parentElement.scrollTop = 0
     }
   }
 }
@@ -120,29 +123,27 @@ export default {
             }
         }
     }
-    .buka-toup{
-      position: fixed;
-      font-size: 25px;
-      bottom: 15px;
-      width: 30px;
-      height: 30px;
-      right: 15px;
-      text-align: center;
-      line-height: 30px;
-      z-index: 999;
-      color: #fff;
-      border-radius: 50%;
-      background: #fe960e;
-      padding: 5px;
-      opacity: .8;
-      &::before{
-        content: "top";
-      }
-    }
-    .fa{
-      display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
-      text-rendering: auto;
-    }
+    // .buka-toup{
+    //   position: fixed;
+    //   font-size: 25px;
+    //   bottom: 15px;
+    //   width: 40px;
+    //   height: 40px;
+    //   right: 15px;
+    //   text-align: center;
+    //   line-height: 40px;
+    //   z-index: 999;
+    //   color: #fff;
+    //   border-radius: 50%;
+    //   background: #fe960e;
+    //   padding: 5px;
+    //   opacity: .8;
+    // }
+    // .fa{
+    //   display: inline-block;
+    //   font: normal normal normal 26px/1.2 FontAwesome;
+    //   text-rendering: auto;
+    //   font-weight: 900;
+    // }
 }
 </style>

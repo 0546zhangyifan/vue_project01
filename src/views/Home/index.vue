@@ -38,19 +38,22 @@
         <a class="footer-download">安装客户端</a>
         <p class="footer-copyright">Copyright©buka.cn</p>
       </footer>
+      <Gotop></Gotop>
     </section>
   </div>
 </template>
 
 <script>
 import PublicHeader from '@/views/Header'
+import Gotop from '@/views/Gotop'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.css'
 
 export default {
   name: 'Home',
   components: {
-    PublicHeader
+    PublicHeader,
+    Gotop
   },
   data () {
     return {
