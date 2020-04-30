@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <PublicHeader :current=0></PublicHeader>
-    <section class="main">
+    <section class="main" ref="main">
       <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="item in bannerList" :key="item.id">
@@ -11,7 +11,7 @@
         <div class="swiper-pagination"></div>
       </div>
       <!-- 以下是轮播图下面的信息 -->
-      <div class="home-module" v-for="(item1, index1) in mainList" :key="index1">
+      <div class="home-module" v-for="(item1, index1) in mainList" :key="item1.id">
         <p class="home-module-title">
             <span class="home-module-title-icon"></span>
             <span>{{ item1.title }}</span>
@@ -25,12 +25,12 @@
         </div>
       </div>
       <!-- 底部 -->
-      <div class="home-module">
-        <div class="manga-item manga-list-item-lr manga-list-item-l">
+      <div class="home-module" v-for="(item3, index3) in bottomList" :key="item3.id">
+        <div class="manga-item manga-list-item-lr" v-for="item4 in bottomList[index3].items" :key="item4.id">
           <div class="manga-item-pic">
-            <img height="117.49px" alt="更多总裁>>" src="http://i-cdn.ibuka.cn/auto/appRecom/201909241348_5d89ae16daf67.jpg">
+            <img :alt="item4.title" :src="item4.pic_url">
           </div>
-            <p class="manga-list-item-name">更多总裁&gt;&gt;</p>
+            <p class="manga-list-item-name">{{ item4.title }}</p>
         </div>
       </div>
       <footer>
@@ -58,26 +58,31 @@ export default {
   data () {
     return {
       bannerList: [],
-      mainList: []
+      mainList: [],
+      bottomList: []
     }
   },
-  // mounted () {
-  //   /* eslint-disable */
-  //   setTimeout(() => {
-  //   new Swiper('.swiper-container', {
-  //     pagination: {
-  //       el: '.swiper-pagination',
-  //       clickable :true,
-  //     },
-  //     loop : true,
-  //     autoplay:true,
-  //   })
-  //   }, 200);
-  //   /* eslint-disable */
-  // },
+  methods: {
+    getBottom () {
+      this.$axios({
+        url: 'buka/api/v3/home',
+        params: {
+          page: 2
+        },
+        method: 'GET'
+      }).then(res => {
+        this.bottomList = res.data.datas.items
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  },
   created () {
     this.$axios({
-      url: 'buka/api/v3/home?page=1',
+      url: 'buka/api/v3/home',
+      params: {
+        page: 1
+      },
       method: 'GET'
     }).then(res => {
       this.bannerList = res.data.datas.items[0].items
@@ -100,6 +105,9 @@ export default {
       })
     }).catch(err => {
       console.log(err)
+    });
+    this.$nextTick(() => {
+      this.getBottom()
     })
   }
 }

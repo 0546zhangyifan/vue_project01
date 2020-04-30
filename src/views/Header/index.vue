@@ -3,7 +3,7 @@
       <div class="head-top">
           <div class="head-left">
               <router-link to="/" class="head-top-logo"></router-link>
-              <button class="head-download">下载APP</button>
+              <button class="head-download">安装APP</button>
           </div>
           <router-link to="/search" class="head-top-search"></router-link>
       </div>
@@ -81,7 +81,7 @@ export default {
                 text-align: center;
                 height: 28px;
                 line-height: 28px;
-                width: 64px;
+                width: 68px;
                 padding: 0 7px;
                 margin-top: 2px;
                 font-size: 12px;
