@@ -16,18 +16,19 @@
             <span class="home-module-title-icon"></span>
             <span>{{ item1.title }}</span>
         </p>
-        <div v-for="(item2, index2) in mainList[index1].items" :key="index2" class="manga-item" :class="{ 'manga-list-item-big':item2.type==1, 'manga-list-item-lr':item2.type==2, 'manga-list-item-l':(item2.type==2&&index2%2===1), 'manga-list-item-r':(item2.type==2&&index2%2===0) }" >
+        <div v-for="(item2, index2) in mainList[index1].items" :key="index2" class="manga-item" :class="{ 'manga-list-item-big':item2.type==1, 'manga-list-item-lr':item2.type==2 }" >
             <div class="manga-item-pic">
-                <img :alt="item2.title" :src="item2.pic_url" lazy="loaded">
+                <img :alt="item2.title" v-lazy="item2.pic_url">
             </div>
             <p class="manga-list-item-name">{{ item2.title }}</p>
             <p class="manga-list-item-small">{{ item2.subtitle }}</p>
         </div>
       </div>
+      <!-- 底部 -->
       <div class="home-module">
         <div class="manga-item manga-list-item-lr manga-list-item-l">
           <div class="manga-item-pic">
-            <img height="117.49px" alt="更多总裁>>" src="http://i-cdn.ibuka.cn/auto/appRecom/201909241348_5d89ae16daf67.jpg" lazy="loaded">
+            <img height="117.49px" alt="更多总裁>>" src="http://i-cdn.ibuka.cn/auto/appRecom/201909241348_5d89ae16daf67.jpg">
           </div>
             <p class="manga-list-item-name">更多总裁&gt;&gt;</p>
         </div>
@@ -54,8 +55,7 @@ export default {
   data () {
     return {
       bannerList: [],
-      mainList: [],
-      listItem: 0
+      mainList: []
     }
   },
   // mounted () {
@@ -94,7 +94,6 @@ export default {
           }
         })
         /* eslint-disable */
-        console.log(this.mainList[0].title)
       })
     }).catch(err => {
       console.log(err)
@@ -193,13 +192,8 @@ export default {
         width: 100%;
       }
       .manga-list-item-lr{
-        width: 49%;
-      }
-      .manga-list-item-l{
-        margin-right: 1%
-      }
-      .manga-list-item-r{
-        margin-left: 1%
+        width: 50%;
+        padding: 0 0.5%;
       }
     }
     footer{

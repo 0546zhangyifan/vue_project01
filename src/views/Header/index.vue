@@ -1,19 +1,20 @@
 <template>
   <header class="headClass">
-        <div class="head-top">
-            <div class="head-left">
-                <router-link to="/" class="head-top-logo"></router-link>
-                <button class="head-download">下载APP</button>
-            </div>
-            <router-link to="/search" class="head-top-search"></router-link>
-        </div>
-        <nav>
-            <ul>
-                <li v-for="(item, index) in list" :key="item.id">
-                    <router-link :to='item.toUrl' class="link" :class="{ active:index===current }" @click="btnList(index)">{{ item.listName }}</router-link>
-                </li>
-            </ul>
-        </nav>
+      <div class="head-top">
+          <div class="head-left">
+              <router-link to="/" class="head-top-logo"></router-link>
+              <button class="head-download">下载APP</button>
+          </div>
+          <router-link to="/search" class="head-top-search"></router-link>
+      </div>
+      <nav>
+          <ul>
+              <li v-for="(item, index) in list" :key="item.id">
+                  <router-link :to='item.toUrl' class="link" :class="{ active:index===current }" @click="btnList(index)">{{ item.listName }}</router-link>
+              </li>
+          </ul>
+      </nav>
+      <div id="footer-arrow" class="fa buka-toup" v-if="current===0"></div>
   </header>
 </template>
 <script>
@@ -118,6 +119,30 @@ export default {
                 }
             }
         }
+    }
+    .buka-toup{
+      position: fixed;
+      font-size: 25px;
+      bottom: 15px;
+      width: 30px;
+      height: 30px;
+      right: 15px;
+      text-align: center;
+      line-height: 30px;
+      z-index: 999;
+      color: #fff;
+      border-radius: 50%;
+      background: #fe960e;
+      padding: 5px;
+      opacity: .8;
+      &::before{
+        content: "top";
+      }
+    }
+    .fa{
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
     }
 }
 </style>
