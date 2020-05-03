@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <PublicHeader :current=0></PublicHeader>
+    <PublicHeader>
+      <HeaderList :current=0></HeaderList>
+    </PublicHeader>
     <section class="main" ref="main">
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -28,7 +30,7 @@
       <div class="home-module" v-for="(item3, index3) in bottomList" :key="item3.id">
         <div class="manga-item manga-list-item-lr" v-for="item4 in bottomList[index3].items" :key="item4.id">
           <div class="manga-item-pic">
-            <img :alt="item4.title" :src="item4.pic_url">
+            <img :alt="item4.title" v-lazy="item4.pic_url">
           </div>
             <p class="manga-list-item-name">{{ item4.title }}</p>
         </div>
@@ -45,6 +47,7 @@
 
 <script>
 import PublicHeader from '@/views/Header'
+import HeaderList from '@/views/Header/HeaderList'
 import Gotop from '@/views/Gotop'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.css'
@@ -53,6 +56,7 @@ export default {
   name: 'Home',
   components: {
     PublicHeader,
+    HeaderList,
     Gotop
   },
   data () {

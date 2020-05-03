@@ -1,0 +1,254 @@
+[
+    {
+        "gname": "最近更新",
+        "url": "/class?id=1",
+        "img": "http://i-cdn.buka.cn/logo/group/20160825145944_57be976063e36.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": null
+    },
+    {
+        "gname": "今日热榜",
+        "url": "/class?id=45",
+        "img": "http://i-cdn.buka.cn/logo/group/20160825145948_57be9764d0c6e.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 10018
+    },
+    {
+        "gname": "已完结",
+        "url": "/class?id=78",
+        "img": "http://i-cdn.ibuka.cn/logo/group/20170103144735_586b49070de22.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12022
+    },
+    {
+        "gname": "高分精选",
+        "url": "/class?id=120",
+        "img": "http://i-cdn.buka.cn/logo/group/20161013164354_57ff494a432b3.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12064
+    },
+    {
+        "gname": "漫展周边",
+        "url": "/expo",
+        "img": "http://i-cdn.buka.cn/logo/group/20161012160943_57fdefc702307.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": null
+    },
+    {
+        "gname": "视频解锁",
+        "url": "/class?id=172",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926134851_5d8c514350f88.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12114
+    },
+    {
+        "gname": "付费漫画",
+        "url": "/class?id=186",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926112008_5d8c2e6851a30.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12128
+    },
+    {
+        "gname": "最近上新",
+        "url": "/class?id=140",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926115407_5d8c365f92c4e.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 12084
+    },
+    {
+        "gname": "日韩",
+        "url": "/class?id=78",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926112351_5d8c2f479a958.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12053
+    },
+    {
+        "gname": "经典",
+        "url": "/class?id=26",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926115651_5d8c3703ae2ee.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 303
+    },
+    {
+        "gname": "联合出品",
+        "url": "/class?id=89",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926115835_5d8c376b041c3.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 12033
+    },
+    {
+        "gname": "条漫",
+        "url": "/class?id=92",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926135625_5d8c5309ccb37.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12036
+    },
+    {
+        "gname": "百合",
+        "url": "/class?id=8",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926112932_5d8c309c87c8f.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 206
+    },
+    {
+        "gname": "肥皂",
+        "url": "/class?id=65",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926143853_5d8c5cfd78bc1.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 12009
+    },
+    {
+        "gname": "玄幻",
+        "url": "/class?id=97",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926190734_5d8c9bf66af1c.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12041
+    },
+    {
+        "gname": "都市恋爱",
+        "url": "/class?id=174",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926113203_5d8c3133b3b28.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12116
+    },
+    {
+        "gname": "恋爱",
+        "url": "/class?id=28",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926113344_5d8c3198793e9.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 404
+    },
+    {
+        "gname": "用户原创",
+        "url": "/class?id=147",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926114702_5d8c34b6d1c54.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12091
+    },
+    {
+        "gname": "游戏",
+        "url": "/class?id=74",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926140600_5d8c55480e9d7.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12018
+    },
+    {
+        "gname": "治愈",
+        "url": "/class?id=19",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926140818_5d8c55d24ed5a.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 202
+    },
+    {
+        "gname": "科幻",
+        "url": "/class?id=21",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926141544_5d8c5790ab68a.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 403
+    },
+    {
+        "gname": "搞笑",
+        "url": "/class?id=31",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926114932_5d8c354c65baa.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 10008
+    },
+    {
+        "gname": "架空",
+        "url": "/class?id=42",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926113638_5d8c3245dd51a.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 211
+    },
+    {
+        "gname": "励志",
+        "url": "/class?id=79",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926190400_5d8c9b200f404.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12023
+    },
+    {
+        "gname": "格斗",
+        "url": "/class?id=10",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926142249_5d8c5939ad274.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 410
+    },
+    {
+        "gname": "少女漫",
+        "url": "/class?id=159",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926114239_5d8c33af50115.png",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 1,
+        "param": 12103
+    },
+    {
+        "gname": "少年漫",
+        "url": "/class?id=160",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20190926114531_5d8c345bcf314.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12104
+    },
+    {
+        "gname": "真人漫",
+        "url": "/class?id=175",
+        "img": "http://i-cdn.ibuka.cn/manga/group/20180508131103_5af1316758c39.jpg",
+        "fun": 1,
+        "count": 16,
+        "isCenter": 0,
+        "param": 12117
+    }
+]

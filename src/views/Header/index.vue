@@ -7,34 +7,12 @@
           </div>
           <router-link to="/search" class="head-top-search"></router-link>
       </div>
-      <nav>
-          <ul>
-              <li v-for="(item, index) in list" :key="item.id">
-                  <router-link :to='item.toUrl' class="link" :class="{ active:index===current }" @click="btnList(index)">{{ item.listName }}</router-link>
-              </li>
-          </ul>
-      </nav>
-      <!-- <div id="footer-arrow" class="fa buka-toup iconfont" v-if="current===0" @click="gotop">&#xe61d;</div> -->
+      <slot></slot>
   </header>
 </template>
 <script>
 export default {
   name: 'PublicHeader',
-  props: {
-    current: {
-      type: Number,
-      default: 0
-    }
-  },
-  data () {
-    return {
-      list: [
-        { id: 1, listName: '推荐', toUrl: '/' },
-        { id: 2, listName: '排行', toUrl: '/top' },
-        { id: 3, listName: '分类', toUrl: '/category' }
-      ]
-    }
-  },
   methods: {
     btnList (index) {
       this.current = index
@@ -98,52 +76,5 @@ export default {
             background-position: 80px 2px
         }
     }
-    nav{
-        width: 100%;
-        height: 38px;
-        ul{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            li{
-                height: 100%;
-                flex: 1;
-                line-height: 38px;
-                text-align: center;
-                .link{
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    font-size: 16px;
-                    color: #333;
-                }
-                .active{
-                    color: #fe960e;
-                }
-            }
-        }
-    }
-    // .buka-toup{
-    //   position: fixed;
-    //   font-size: 25px;
-    //   bottom: 15px;
-    //   width: 40px;
-    //   height: 40px;
-    //   right: 15px;
-    //   text-align: center;
-    //   line-height: 40px;
-    //   z-index: 999;
-    //   color: #fff;
-    //   border-radius: 50%;
-    //   background: #fe960e;
-    //   padding: 5px;
-    //   opacity: .8;
-    // }
-    // .fa{
-    //   display: inline-block;
-    //   font: normal normal normal 26px/1.2 FontAwesome;
-    //   text-rendering: auto;
-    //   font-weight: 900;
-    // }
 }
 </style>

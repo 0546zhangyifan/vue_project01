@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <PublicHeader :current=1></PublicHeader>
+    <PublicHeader>
+      <HeaderList :current=1></HeaderList>
+    </PublicHeader>
     <section class="mangalist-main">
       <div class="manga-item" v-for="(item, index) in mainList" :key="item.id">
         <router-link :to='`/detail/${item.mid}`'>
           <span class="img_wraper">
-            <img class="lazy" :src='`${item.logodir}/32h.jpg`'>
+            <img v-lazy='`${item.logodir}/32h.jpg`'>
           </span>
           <p>
             <span class="manga-item-name">
@@ -31,7 +33,7 @@
 
 <script>
 import PublicHeader from '@/views/Header'
-
+import HeaderList from '@/views/Header/HeaderList'
 export default {
   name: 'Top',
   data () {
@@ -40,14 +42,14 @@ export default {
     }
   },
   components: {
-    PublicHeader
+    PublicHeader,
+    HeaderList
   },
   created () {
     this.$axios({
       url: 'buka/ranking/get_data',
       method: 'POST'
     }).then(res => {
-      console.log(res.data.datas.items)
       this.mainList = res.data.datas.items
     }).catch(err => {
       console.log(err)
