@@ -4,18 +4,19 @@
       <HeaderList :current="2"></HeaderList>
     </PublicHeader>
     <section class="main" style="min-height: 490px;">
-      <router-link v-for="(item, index) in categoryList" :key="index" to="/class" class="class-item" :class="{'class-item-center':item.isCenter===1}">
+      <a v-for="(item, index) in categoryList" :key="index" @click="storage(item)" class="class-item" :class="{'class-item-center':item.isCenter===1}">
         <div class="class-item-img">
           <img v-lazy="item.img" />
         </div>
         <div class="class-item-font">{{ item.gname }}</div>
-      </router-link>
+      </a>
     </section>
   </div>
 </template>
 <script>
 import PublicHeader from '@/views/Header'
 import HeaderList from '@/views/Header/HeaderList'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'Category',
@@ -26,6 +27,13 @@ export default {
   data () {
     return {
       categoryList: []
+    }
+  },
+  methods: {
+    ...mapMutations('class', ['SET_CLASS']),
+    storage (item) {
+      this.SET_CLASS(item)
+      this.$router.push('/class')
     }
   },
   created () {
