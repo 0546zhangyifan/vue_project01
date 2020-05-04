@@ -14,8 +14,8 @@
   </div>
 </template>
 <script>
-import PublicHeader from '@/views/Header'
-import HeaderList from '@/views/Header/HeaderList'
+import PublicHeader from '@/components/Header'
+import HeaderList from '@/components/Header/HeaderList'
 import { mapMutations } from 'vuex'
 
 export default {

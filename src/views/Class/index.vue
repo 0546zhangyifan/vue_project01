@@ -15,18 +15,14 @@
             <span class="manga-item-author">{{ item.author }}</span>
         </p>
       </a>
-      <footer class="public-footer">
-        <div class="public-footer-top">
-          <a href="javascript:;" class="footer-link" id="download_client_app">下载客户端</a>
-        </div>
-        <div class="public-footer-bottom">Copyright©buka.cn</div>
-      </footer>
+      <PublicFooter></PublicFooter>
     </section>
   </div>
 </template>
 <script>
-import PublicHeader from '@/views/Header'
-import HeaderBack from '@/views/Header/HeaderBack'
+import PublicHeader from '@/components/Header'
+import HeaderBack from '@/components/Header/HeaderBack'
+import PublicFooter from '@/components/Footer'
 import Qs from 'qs'
 import { mapGetters } from 'vuex'
 
@@ -39,7 +35,8 @@ export default {
   },
   components: {
     PublicHeader,
-    HeaderBack
+    HeaderBack,
+    PublicFooter
   },
   computed: {
     ...mapGetters('class', ['className', 'theInformation'])
@@ -56,14 +53,13 @@ export default {
         param: this.theInformation.param,
         gname: this.theInformation.gname,
         count: this.theInformation.count,
-        start: this.theInformation.start
+        start: 0
       },
       transformRequest: [function (data) {
         return Qs.stringify(data)
       }]
     }).then(res => {
-      this.classList = res.data.datas.items
-      console.log(res.data.datas.items)
+      this.classList.push(...(res.data.datas.items))
     }).catch(err => {
       console.log(err)
     })
@@ -92,6 +88,7 @@ export default {
       text-decoration: none;
       color: inherit;
       height: 228.125px;
+      overflow: hidden;
       .img_wraper{
         width: 108.75px;
         height: 163.125px;
@@ -137,26 +134,6 @@ export default {
           white-space: nowrap;
           text-overflow: ellipsis;
         }
-      }
-    }
-    .public-footer{
-      clear: both;
-      display: block;
-      margin-top: 21px;
-      margin-bottom: 14px;
-      text-align: center;
-      font-size: 14px;
-      font-family: Microsoft YaHei,Droid Sans Fallback,SimHei,Arial,Helvetica,tahoma,sans-serif;
-      .public-footer-top{
-        .footer-link{
-          display: inline-block;
-          color: #333;
-        }
-      }
-      .public-footer-bottom{
-        font-size: 12px;
-        margin: 4px 0;
-        color: #ccc
       }
     }
   }

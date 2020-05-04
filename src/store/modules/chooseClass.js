@@ -1,5 +1,8 @@
+// 从sessionStorage中拿数据
+const getClass = window.sessionStorage.getItem('saveClass')
+
 const state = {
-  chooseClass: {
+  chooseClass: getClass ? JSON.parse(getClass) : {
     fun: 14,
     param: '',
     gname: '最近更新',
@@ -20,6 +23,7 @@ const getters = {
 const mutations = {
   SET_CLASS (state, payload) {
     state.chooseClass = payload
+    window.sessionStorage.setItem('saveClass', JSON.stringify(state.chooseClass))
   }
 }
 

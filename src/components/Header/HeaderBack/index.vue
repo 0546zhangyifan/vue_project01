@@ -12,7 +12,7 @@ export default {
   props: {
     detailName: {
       type: String,
-      default: 'sss'
+      default: '出错了！'
     }
   }
 }

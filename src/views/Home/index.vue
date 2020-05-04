@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import PublicHeader from '@/views/Header'
-import HeaderList from '@/views/Header/HeaderList'
-import Gotop from '@/views/Gotop'
+import PublicHeader from '@/components/Header'
+import HeaderList from '@/components/Header/HeaderList'
+import Gotop from '@/components/Gotop'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.css'
 
