@@ -6,6 +6,7 @@ import axios from 'axios'
 import gotop from './directive/gotop.js'
 
 import VueLazyload from 'vue-lazyload'
+import { List } from 'vant'
 
 import './assets/reset.scss'
 
@@ -18,6 +19,7 @@ Vue.use(VueLazyload, {
   loading: require('./assets/icon/loading.jpg'),
   attempt: 2
 })
+Vue.use(List)
 
 new Vue({
   router,

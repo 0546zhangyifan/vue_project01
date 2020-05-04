@@ -21,10 +21,10 @@ export default {
     font-size: 14px;
     font-family: Microsoft YaHei,Droid Sans Fallback,SimHei,Arial,Helvetica,tahoma,sans-serif;
     .public-footer-top{
-    .footer-link{
-        display: inline-block;
-        color: #333;
-    }
+        .footer-link{
+            display: inline-block;
+            color: #333;
+        }
     }
     .public-footer-bottom{
     font-size: 12px;
