@@ -8,7 +8,7 @@ import gotop from './directive/gotop.js'
 import VueLazyload from 'vue-lazyload'
 import { List, Popup } from 'vant'
 
-import './assets/reset.scss'
+import '../public/assets/style/reset.scss'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
