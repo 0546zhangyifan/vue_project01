@@ -1,18 +1,23 @@
 <template>
   <header class="headClass">
-      <div class="head-top">
-          <div class="head-left">
-              <router-link to="/" class="head-top-logo"></router-link>
-              <button class="head-download">安装APP</button>
-          </div>
-          <router-link to="/search" class="head-top-search"></router-link>
+    <div class="head-top">
+      <div class="head-left">
+        <router-link to="/" class="head-top-logo"></router-link>
+        <button class="head-download">安装APP</button>
       </div>
-      <slot></slot>
+      <router-link to="/search" class="head-top-search"></router-link>
+    </div>
+    <slot></slot>
   </header>
 </template>
 <script>
 export default {
   name: 'PublicHeader',
+  data () {
+    return {
+      show: false
+    }
+  },
   methods: {
     btnList (index) {
       this.current = index

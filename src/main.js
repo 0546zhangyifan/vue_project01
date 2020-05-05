@@ -6,7 +6,7 @@ import axios from 'axios'
 import gotop from './directive/gotop.js'
 
 import VueLazyload from 'vue-lazyload'
-import { List } from 'vant'
+import { List, Popup } from 'vant'
 
 import './assets/reset.scss'
 
@@ -20,6 +20,7 @@ Vue.use(VueLazyload, {
   attempt: 2
 })
 Vue.use(List)
+Vue.use(Popup)
 
 new Vue({
   router,
