@@ -6,9 +6,10 @@ import axios from 'axios'
 import gotop from './directive/gotop.js'
 
 import VueLazyload from 'vue-lazyload'
-import { List, Popup } from 'vant'
+import { List, Overlay, Button, Icon } from 'vant'
 
 import '../public/assets/style/reset.scss'
+import 'vant/lib/index.css'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
@@ -20,7 +21,9 @@ Vue.use(VueLazyload, {
   attempt: 2
 })
 Vue.use(List)
-Vue.use(Popup)
+Vue.use(Overlay)
+Vue.use(Button)
+Vue.use(Icon)
 
 new Vue({
   router,

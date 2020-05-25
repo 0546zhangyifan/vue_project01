@@ -153,11 +153,11 @@ export default {
 }
 </style>
 <style lang='scss'>
-.van-list__finished-text{
-  clear: both;
-  bottom: 30px;
-  color: #B5B5B5;
-  text-align: center;
-  font-size: 14px;
-}
+// .van-list__finished-text{
+//   clear: both;
+//   bottom: 30px;
+//   color: #B5B5B5;
+//   text-align: center;
+//   font-size: 14px;
+// }
 </style>
