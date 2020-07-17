@@ -12,7 +12,7 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      <!-- 以下是轮播图下面的信息 -->
+      <!-- 以下是轮播图下面的信息  -->
       <div class="home-module" v-for="(item1, index1) in mainList" :key="item1.id">
         <p class="home-module-title">
             <span class="home-module-title-icon"></span>
